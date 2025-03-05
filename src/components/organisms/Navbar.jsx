@@ -5,10 +5,8 @@ import { Link, NavLink } from "react-router-dom";
 import CartIcon from "../../assets/cart_icon.png";
 import SearchIcon from "../../assets/search_icon.png";
 import MenuIcon from "../../assets/menu_icon.png";
-import DropdownIcon from "../../assets/dropdown_icon.png";
-import NavMenu from "../molecules/Navmenu";
+import NavMenu from "../molecules/NavMenu";
 import ProfileDropdown from "../molecules/ProfileDropdown";
-import NavItem from "../atoms/NavItem";
 import SidebarMenu from "../molecules/SidebarMenu";
 
 const Navbar = () => {
