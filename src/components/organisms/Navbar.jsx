@@ -15,7 +15,9 @@ const Navbar = () => {
 
     return (
         <div className="flex items-center justify-between py-5 px-4">
-            <Logo />
+            <Link to="/" className="relative">
+                <Logo />
+            </Link>
             <NavMenu />
             <div className="flex items-center gap-6">
                 <IconButton icon={SearchIcon} alt="Search" />

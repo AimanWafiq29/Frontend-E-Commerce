@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
 
 @import "tailwindcss";
 
@@ -9,16 +9,23 @@
 /* Class based dark mode */
 @variant dark (&:where(.dark, .dark *));
 
-a.active hr{
-    display: block;
+a.active hr {
+  display: block;
 }
 
-*{
-    font-family: Outfit;
+* {
+  font-family: Outfit;
 }
 
-.prata-regular{
-    font-family: "Prata", "Serif";
-    font-weight: 400;
-    font-style: normal;
+.prata-regular {
+  font-family: "Prata", "Serif";
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
 }
