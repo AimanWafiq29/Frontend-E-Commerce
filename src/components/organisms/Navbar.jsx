@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Logo from "../atoms/Logo";
 import IconButton from "../atoms/IconButton";
 import { Link, NavLink } from "react-router-dom";
@@ -8,19 +8,21 @@ import MenuIcon from "../../assets/menu_icon.png";
 import NavMenu from "../molecules/NavMenu";
 import ProfileDropdown from "../molecules/ProfileDropdown";
 import SidebarMenu from "../molecules/SidebarMenu";
+import { ShopContext } from "../../context/ShopContext";
 
 const Navbar = () => {
 
     const [visible, setVisible] = useState(false);
+    const { setShowSearch } = useContext(ShopContext);
 
     return (
         <div className="flex items-center justify-between py-5 px-4">
             <Link to="/" className="relative">
-                <Logo className="w-36 cursor-pointer"/>
+                <Logo className="w-36 cursor-pointer" />
             </Link>
             <NavMenu />
             <div className="flex items-center gap-6">
-                <IconButton icon={SearchIcon} alt="Search" />
+                <IconButton icon={SearchIcon} alt="Search" onClick={() => setShowSearch(true)} />
                 <ProfileDropdown />
                 <Link to="/cart" className="relative">
                     <IconButton icon={CartIcon} alt="Cart" />

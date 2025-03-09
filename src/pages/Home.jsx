@@ -23,13 +23,13 @@ const Home = () => {
 
       {/* Latest Collection */}
       <div className="my-10">
-        <SectionTitle title="Latest Collection" paragraph="Explore our high-quality products carefully curated for you." />
+        <SectionTitle text1="Latest" text2="Collection" paragraph="Explore our high-quality products carefully curated for you." />
         <ProductList products={latestProducts} currency={currency} />
       </div>
 
       {/* Best Sellers */}
       <div className="my-10">
-        <SectionTitle title="Best Sellers" paragraph="Explore our high-quality products carefully curated for you." />
+        <SectionTitle text1="Best" text2="Sellers" paragraph="Explore our high-quality products carefully curated for you." />
         <ProductList products={bestSeller} currency={currency} />
       </div>
 
@@ -41,7 +41,7 @@ const Home = () => {
       </div>
 
       <SubscribeForm />
-      
+
     </div>
   );
 };
