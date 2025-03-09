@@ -7,8 +7,10 @@ import FeatureItem from "../components/molecules/FeatureItem";
 import QualityIcon from "../assets/quality_icon.png";
 import SupportIcon from "../assets/support_img.png";
 import ExchangeIcon from "../assets/exchange_icon.png";
+import SubscribeForm from "../components/molecules/SubscribeForm";
 
 const Home = () => {
+
   const { products, currency } = useContext(ShopContext);
 
   // Menggunakan useMemo untuk optimalisasi
@@ -31,13 +33,15 @@ const Home = () => {
         <ProductList products={bestSeller} currency={currency} />
       </div>
 
-    {/* Features */}
-    <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 py-20 text-xs sm:text-sm md:text-base text-gray-700">
+      {/* Features */}
+      <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 py-20 text-xs sm:text-sm md:text-base text-gray-700">
         <FeatureItem icon={ExchangeIcon} title="Easy Exchange Policy" description="We offer hassle-free exchange policy" />
         <FeatureItem icon={QualityIcon} title="7 Days Return Policy" description="We provide 7 days free return policy" />
         <FeatureItem icon={SupportIcon} title="Best Customer Support" description="We provide 24/7 customer support" />
       </div>
 
+      <SubscribeForm />
+      
     </div>
   );
 };

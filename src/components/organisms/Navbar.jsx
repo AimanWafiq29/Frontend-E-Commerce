@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
         <div className="flex items-center justify-between py-5 px-4">
             <Link to="/" className="relative">
-                <Logo />
+                <Logo className="w-36 cursor-pointer"/>
             </Link>
             <NavMenu />
             <div className="flex items-center gap-6">
