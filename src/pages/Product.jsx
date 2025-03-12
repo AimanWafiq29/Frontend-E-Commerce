@@ -32,15 +32,23 @@ const Product = () => {
   if (!productData) return <div>Loading...</div>;
 
   return (
+
     <div>
-      <ProductDetail 
-        product={productData} 
-        currency={currency} 
-        size={size} 
-        setSize={setSize} 
-        addToCart={addToCart} 
+      <ProductDetail
+        key={productId}
+        product={productData}
+        currency={currency}
+        size={size}
+        setSize={setSize}
+        addToCart={addToCart}
       />
-      <ProductList title="Related Products" products={related} currency={currency} />
+
+      <ProductList
+        products={related}
+        currency={currency}
+        title="Related Products"
+        columns="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+      />
     </div>
   );
 };

@@ -19,22 +19,24 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
-
-      {/* Latest Collection */}
+      
       <ProductList
         products={latestProducts}
         currency={currency}
         title="Latest Collection"
         description="Explore our high-quality products carefully curated for you."
+        columns="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
       />
 
-      {/* Best Sellers */}
       <ProductList
         products={bestSeller}
         currency={currency}
         title="Best Sellers"
         description="Explore our high-quality products carefully curated for you."
+        columns="grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
       />
+
+
 
       {/* Features */}
       <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 py-20 text-xs sm:text-sm md:text-base text-gray-700">
