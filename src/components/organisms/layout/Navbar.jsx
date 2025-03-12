@@ -1,19 +1,22 @@
 import React, { useContext, useState } from "react";
-import Logo from "../atoms/Logo";
-import IconButton from "../atoms/IconButton";
 import { Link, NavLink } from "react-router-dom";
-import CartIcon from "../../assets/cart_icon.png";
-import SearchIcon from "../../assets/search_icon.png";
-import MenuIcon from "../../assets/menu_icon.png";
-import NavMenu from "../molecules/NavMenu";
-import ProfileDropdown from "../molecules/ProfileDropdown";
-import SidebarMenu from "../molecules/SidebarMenu";
-import { ShopContext } from "../../context/ShopContext";
+
+import IconButton from "../../atoms/buttons/IconButton";
+import NavMenu from "../../molecules/navigations/NavMenu";
+import ProfileDropdown from "../../molecules/navigations/ProfileDropdown";
+import SidebarMenu from "../../molecules/navigations/SidebarMenu";
+
+import MenuIcon from "../../../assets/menu_icon.png";
+import SearchIcon from "../../../assets/search_icon.png";
+import CartIcon from "../../../assets/cart_icon.png";
+
+import { ShopContext } from "../../../context/ShopContext";
+import Logo from "../../atoms/images/Logo";
 
 const Navbar = () => {
 
     const [visible, setVisible] = useState(false);
-    const { setShowSearch } = useContext(ShopContext);
+    const { setShowSearch, getCartCount } = useContext(ShopContext);
 
     return (
         <div className="flex items-center justify-between py-5 px-4">
@@ -27,7 +30,7 @@ const Navbar = () => {
                 <Link to="/cart" className="relative">
                     <IconButton icon={CartIcon} alt="Cart" />
                     <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white rounded-full text-[8px]">
-                        3
+                        {getCartCount()}
                     </p>
                 </Link>
                 <IconButton onClick={() => setVisible(true)} icon={MenuIcon} alt="Menu" className="w-5 sm:hidden" />

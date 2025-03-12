@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { ShopContext } from "../../context/ShopContext";
-import SearchIcon from "../../assets/search_icon.png";
-import CrossIcon from "../../assets/cross_icon.png";
+import { ShopContext } from "../../../context/ShopContext";
+import SearchIcon from "../../../assets/search_icon.png";
+import CrossIcon from "../../../assets/cross_icon.png";
 
 const SearchBar = () => {
     const { search, setSearch, showSearch, setShowSearch } = useContext(ShopContext);

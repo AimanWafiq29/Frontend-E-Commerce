@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../atoms/Title";
+import Title from "../../atoms/typographys/Title";
 
 const SectionTitle = ({ text1, text2, paragrap }) => {
     return (

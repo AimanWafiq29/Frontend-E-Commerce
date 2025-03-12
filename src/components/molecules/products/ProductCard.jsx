@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductImage from "../atoms/ProductImage";
-import ProductName from "../atoms/ProductName";
-import ProductPrice from "../atoms/ProductPrice";
+import ProductImage from "../../atoms/products/ProductImage";
+import ProductName from "../../atoms/products/ProductName";
+import ProductPrice from "../../atoms/products/ProductPrice";
 
 const ProductCard = ({ product, currency }) => {
   return (

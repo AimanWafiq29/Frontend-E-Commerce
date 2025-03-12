@@ -1,5 +1,5 @@
 import React from "react";
-import IconButton from "../atoms/IconButton";
+import IconButton from "../../atoms/buttons/IconButton";
 
 const FeatureItem = ({ icon, title, description }) => {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import NavItem from "../atoms/NavItem";
+import NavItem from "../../atoms/navigations/NavItem";
 
 const NavMenu = () => {
   return (

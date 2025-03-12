@@ -1,5 +1,5 @@
 import React from "react";
-import Checkbox from "../atoms/Checkbox";
+import Checkbox from "../../atoms/inputs/Checkbox";
 
 const FilterSection = ({ title, options, selected, toggle }) => {
     return (

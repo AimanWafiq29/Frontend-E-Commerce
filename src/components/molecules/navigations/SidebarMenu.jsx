@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import IconButton from "../atoms/IconButton";
-import DropdownIcon from "../../assets/dropdown_icon.png";
+import IconButton from "../../atoms/buttons/IconButton";
+import DropdownIcon from "../../../assets/dropdown_icon.png";
 
 const SidebarMenu = ({ visible, setVisible }) => {
     return (

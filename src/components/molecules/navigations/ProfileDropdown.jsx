@@ -1,6 +1,6 @@
 import React from "react";
-import IconButton from "../atoms/IconButton";
-import ProfileIcon from "../../assets/profile_icon.png";
+import IconButton from "../../atoms/buttons/IconButton";
+import ProfileIcon from "../../../assets/profile_icon.png";
 
 const ProfileDropdown = () => {
   return (

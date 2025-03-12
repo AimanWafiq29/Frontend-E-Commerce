@@ -1,13 +1,12 @@
 import React, { useContext, useMemo } from "react";
-import HeroSection from "../components/organisms/HeroSection";
 import { ShopContext } from "../context/ShopContext";
-import ProductList from "../components/organisms/ProductList";
-import SectionTitle from "../components/molecules/SectionTitle";
-import FeatureItem from "../components/molecules/FeatureItem";
+import FeatureItem from "../components/molecules/features/FeatureItem";
+import SubscribeForm from "../components/molecules/forms/SubscribeForm";
+import ProductList from "../components/organisms/products/ProductList";
+import HeroSection from "../components/organisms/layout/HeroSection";
 import QualityIcon from "../assets/quality_icon.png";
 import SupportIcon from "../assets/support_img.png";
 import ExchangeIcon from "../assets/exchange_icon.png";
-import SubscribeForm from "../components/molecules/SubscribeForm";
 
 const Home = () => {
 
@@ -22,16 +21,20 @@ const Home = () => {
       <HeroSection />
 
       {/* Latest Collection */}
-      <div className="my-10">
-        <SectionTitle text1="Latest" text2="Collection" paragraph="Explore our high-quality products carefully curated for you." />
-        <ProductList products={latestProducts} currency={currency} />
-      </div>
+      <ProductList
+        products={latestProducts}
+        currency={currency}
+        title="Latest Collection"
+        description="Explore our high-quality products carefully curated for you."
+      />
 
       {/* Best Sellers */}
-      <div className="my-10">
-        <SectionTitle text1="Best" text2="Sellers" paragraph="Explore our high-quality products carefully curated for you." />
-        <ProductList products={bestSeller} currency={currency} />
-      </div>
+      <ProductList
+        products={bestSeller}
+        currency={currency}
+        title="Best Sellers"
+        description="Explore our high-quality products carefully curated for you."
+      />
 
       {/* Features */}
       <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 py-20 text-xs sm:text-sm md:text-base text-gray-700">

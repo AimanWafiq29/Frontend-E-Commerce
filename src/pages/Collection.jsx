@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
-import Title from "../components/atoms/Title";
+import Title from "../components/atoms/typographys/Title";
+import ProductList from "../components/organisms/products/ProductList";
+import FilterPanel from "../components/organisms/filters/FilterPanel";
 import { ShopContext } from "../context/ShopContext";
-import ProductCard from "../components/molecules/ProductCard";
-import FilterPanel from "../components/organisms/FilterPanel";
 
 const Collection = () => {
-  const { products, search, showSearch } = useContext(ShopContext);
+
+  const { products, search, showSearch, currency } = useContext(ShopContext);
+
   const [showFilter, setShowFilter] = useState(false);
   const [filterProducts, setFilterProducts] = useState([]);
   const [category, setCategory] = useState([]);
@@ -73,22 +75,29 @@ const Collection = () => {
 
   return (
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
+
       {/* Filter Panel */}
       <FilterPanel
-        showFilter={() => setShowFilter(!showFilter)}
+        isFilterVisible={showFilter} // ✅ Kirim boolean, bukan fungsi
+        toggleFilter={() => setShowFilter(!showFilter)} // ✅ Kirim fungsi toggle
         category={category}
         subCategory={subCategory}
         toggleCategory={toggleCategory}
         toggleSubCategory={toggleSubCategory}
       />
 
+
       {/* Right Side */}
       <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2xl mb-4">
+
+        <div className="flex flex-wrap items-center justify-between text-base sm:text-2xl mb-4 gap-2">
           <Title text1={"ALL"} text2={"COLLECTIONS"} />
 
           {/* Product Sort */}
-          <select onChange={(e) => setSortType(e.target.value)} className="border-2 border-gray-300 text-sm px-2">
+          <select
+            onChange={(e) => setSortType(e.target.value)}
+            className="border-2 border-gray-300 text-sm px-3 py-2 rounded-lg w-full sm:w-40 md:w-48"
+          >
             <option value="relevant">Sort by: Relevant</option>
             <option value="low-high">Sort by: Low to High</option>
             <option value="high-low">Sort by: High to Low</option>
@@ -96,16 +105,12 @@ const Collection = () => {
         </div>
 
         {/* Map Products */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-          {filterProducts.length > 0 ? (
-            filterProducts.map((product) => (
-              <ProductCard key={product._id} product={product} />
-            ))
-          ) : (
-            <p className="text-center text-gray-500">No products found.</p>
-          )}
-        </div>
+        <ProductList products={filterProducts} currency={currency} />
+
+
       </div>
+
+
     </div>
   );
 };

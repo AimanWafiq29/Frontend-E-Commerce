@@ -1,18 +1,17 @@
 import React from "react";
-import { useState } from "react";
-import FilterSection from "../molecules/FilterSection";
+import FilterSection from "../../molecules/filters/FilterSection";
 
-const FilterPanel = ({ showFilter, category, subCategory, toggleCategory, toggleSubCategory }) => {
+const FilterPanel = ({ isFilterVisible, toggleFilter, category, subCategory, toggleCategory, toggleSubCategory }) => {
     return (
         <div className="min-w-60">
             <p
                 className="my-2 text-xl flex items-center cursor-pointer gap-2"
-                onClick={showFilter}
+                onClick={toggleFilter} // ✅ Toggle filter saat diklik
             >
                 FILTERS
             </p>
 
-            {showFilter && (
+            {isFilterVisible && ( // ✅ Gunakan isFilterVisible sebagai boolean
                 <>
                     <FilterSection
                         title="CATEGORIES"
